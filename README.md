@@ -28,15 +28,15 @@ The following are quick conversions.
 <tr>
 <td>
 <code>
-"Fn::GetAtt":
-  [ "MyLoadBalancer",
+"Fn::GetAtt":<br>
+  [ "MyLoadBalancer",<br>
     "DNSName" ]
 </code>
 </td>
 <td>
 <code>
-Fn::GetAtt:
-- MyLoadBalancer
+Fn::GetAtt:<br>
+- MyLoadBalancer<br>
 - DNSName
 </code>
 </td>
@@ -44,19 +44,19 @@ Fn::GetAtt:
 <tr>
 <td>
 <code>
-"Fn::Join":
-  [ "delimiter",
-    [ comma-delimited, list,
+"Fn::Join":<br>
+  [ "delimiter",<br>
+    [ comma-delimited, list, <br>
       of, values ] ]
 </code>
 </td>
 <td>
 <code>
-Fn:Join:
-- delimiter
-- - comma-delimited
-  - list
-  - of
+Fn:Join:<br>
+- delimiter<br>
+- - comma-delimited<br>
+  - list<br>
+  - of<br>
   -values
 </code>
 </td>
