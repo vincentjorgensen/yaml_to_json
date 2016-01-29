@@ -13,22 +13,52 @@ to JSON right before uploading.
 
 ## Example:
 `yaml_to_json.py cf.yaml > cf.cftemplate`
+
 `aws cloudformation create --template-body file://cf.cftemplate`
 
 ## CloudFormation Functions
 Some specific CloudFormation functions are non-obvious in YAML. 
 The following are quick conversions.
--------------------------------------------------------------------------------
- JSON                                   YAML
--------------------------------------- ----------------------------------------
-"Fn::GetAtt":                          Fn::GetAtt:
-  [ "MyLoadBalancer",                  - MyLoadBalancer
-    "DNSName" ]                        - DNSName
 
-"Fn::Join":                            Fn:Join:
-  [ "delimiter",                       - delimiter
-    [ comma-delimited, list,           - - comma-delimited
-      of, values ] ]                     - list
-                                         - of
-                                         - values
--------------------------------------------------------------------------------
+<table>
+<tr>
+<td>JSON </td>
+<td>YAML </td>
+</tr>
+<tr>
+<td>
+<code>
+"Fn::GetAtt":
+  [ "MyLoadBalancer",
+    "DNSName" ]
+</code>
+</td>
+<td>
+<code>
+Fn::GetAtt:
+- MyLoadBalancer
+- DNSName
+</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>
+"Fn::Join":
+  [ "delimiter",
+    [ comma-delimited, list,
+      of, values ] ]
+</code>
+</td>
+<td>
+<code>
+Fn:Join:
+- delimiter
+- - comma-delimited
+  - list
+  - of
+  -values
+</code>
+</td>
+</tr>
+</table>
