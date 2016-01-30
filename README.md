@@ -27,11 +27,9 @@ The following are quick conversions.
 </tr>
 <tr>
 <td>
-<code>
 "Fn::GetAtt":<br>
   [ "MyLoadBalancer",<br>
     "DNSName" ]
-</code>
 </td>
 <td>
 Fn::GetAtt:<br>
@@ -41,12 +39,10 @@ Fn::GetAtt:<br>
 </tr>
 <tr>
 <td>
-<code>
 "Fn::Join":<br>
   [ "delimiter",<br>
     [ comma-delimited, list, <br>
       of, values ] ]
-</code>
 </td>
 <td>
 Fn:Join:<br>
