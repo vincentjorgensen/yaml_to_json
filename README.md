@@ -57,14 +57,14 @@ Fn:Join:<br>
 <tr>
 <td>
 "Fn::FindInMap:"<br>
-  [ "EbsOptimizedMap",
-    { "Ref": "InstanceType" },
+  [ "EbsOptimizedMap",<br>
+    { "Ref": "InstanceType" },<br>
     "Optimized" ]
 </td>
 <td>
 Fn::FindInMap:<br>
-&nbsp; - EbsOptimizedMap
-&nbsp; - Ref: InstanceType
+&nbsp; - EbsOptimizedMap<br>
+&nbsp; - Ref: InstanceType<br>
 &nbsp; - Optimized
 </td>
 </tr>
