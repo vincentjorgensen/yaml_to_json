@@ -5,14 +5,15 @@ and then converting them to JSON for the upload to AWS.
 
 Two implementations are included: Ruby and Python.
 
-The advantage of writing CloudFormation templates in YAML over JSON
-is that YAML allows the programmer to comment their code. Also, in
-my option, YAML is far for readable than JSON. Since CloudFormation
-requires JSON, it's convenient to develop to YAML and then convert
-to JSON right before uploading.
+The advantage of writing CloudFormation templates in YAML over JSON is that
+YAML allows for comments. Also, in my option, YAML is far for readable than
+JSON. Since CloudFormation requires JSON, it's convenient to develop to YAML
+and then convert to JSON right before uploading.
+
+If you would like to contribute another language, please fork and open a PR.
 
 ## Example:
-`yaml_to_json.py cf.yaml > cf.cftemplate`
+`yaml_to_json.py < cf.yaml > cf.cftemplate`
 
 `aws cloudformation create --template-body file://cf.cftemplate`
 
@@ -55,10 +56,10 @@ Fn:Join:<br>
 </tr>
 <tr>
 <td>
-"Fn::FindInMap:<br>
-  [ EbsOptimizedMap,
-    { Ref: InstanceType },
-    Optimized ]
+"Fn::FindInMap:"<br>
+  [ "EbsOptimizedMap",
+    { "Ref": "InstanceType" },
+    "Optimized" ]
 </td>
 <td>
 Fn::FindInMap:<br>
