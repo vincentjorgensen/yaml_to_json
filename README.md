@@ -17,7 +17,7 @@ to JSON right before uploading.
 `aws cloudformation create --template-body file://cf.cftemplate`
 
 ## CloudFormation Functions
-Some specific CloudFormation functions are non-obvious in YAML. 
+Some common CloudFormation functions are non-obvious in YAML. 
 The following are quick conversions.
 
 <table>
@@ -50,7 +50,21 @@ Fn:Join:<br>
 - - comma-delimited<br>
 &nbsp; - list<br>
 &nbsp; - of<br>
-&nbsp; -values
+&nbsp; - values
+</td>
+</tr>
+<tr>
+<td>
+"Fn::FindInMap:<br>
+  [ EbsOptimizedMap,
+    { Ref: InstanceType },
+    Optimized ]
+</td>
+<td>
+Fn::FindInMap:<br>
+&nbsp; - EbsOptimizedMap
+&nbsp; - Ref: InstanceType
+&nbsp; - Optimized
 </td>
 </tr>
 </table>
